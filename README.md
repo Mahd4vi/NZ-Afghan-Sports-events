@@ -1,2 +1,2 @@
 # Jules
-# NZ Afghan Sports Event
+NZ Afghan Sports Event
