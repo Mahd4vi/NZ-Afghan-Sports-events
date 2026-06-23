@@ -30,7 +30,7 @@ export function About() {
               More than a game — a community on the move.
             </h2>
             <p className="mt-6 text-lg leading-relaxed text-stone">
-              {site.name} grew out of weekend cricket games between friends in{" "}
+              {site.name} grew out of weekend futsal games between friends in{" "}
               {site.established}. Today we run tournaments and leagues across six
               cities, bringing thousands of Afghan-Kiwis together to play, cheer
               and celebrate.

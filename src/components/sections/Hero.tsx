@@ -35,8 +35,8 @@ export function Hero() {
         </h1>
 
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-cloud/75">
-          {site.tagline} Cricket, futsal and volleyball events across Aotearoa —
-          open to every age, every level, every whānau.
+          {site.tagline} Futsal, football, volleyball and netball events across
+          Aotearoa — open to every age, every level, every whānau.
         </p>
 
         <div className="mt-9 flex flex-wrap items-center gap-4">

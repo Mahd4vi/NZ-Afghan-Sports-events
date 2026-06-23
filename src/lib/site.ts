@@ -32,7 +32,7 @@ export const site = {
   shortName: "NZASE",
   tagline: "Bringing the Afghan-Kiwi community together through sport.",
   description:
-    "NZ Afghan Sports Events organises cricket, football and volleyball tournaments across Aotearoa — celebrating Afghan culture, building belonging, and getting our community moving.",
+    "NZ Afghan Sports Events organises futsal, football, volleyball and netball events across Aotearoa — celebrating Afghan culture, building belonging, and getting our community moving.",
   established: 2019,
   region: "Aotearoa New Zealand",
   email: "hello@nzafghansports.nz",
@@ -59,21 +59,9 @@ export const site = {
 
   events: [
     {
-      id: "summer-cricket-cup",
-      title: "Summer Cricket Cup",
-      sport: "Cricket",
-      date: "Sat 18 January 2026",
-      isoDate: "2026-01-18",
-      venue: "Hagley Oval",
-      city: "Christchurch",
-      status: "open",
-      blurb:
-        "Our flagship T20 tournament — 12 teams, one trophy, and a full day of food, music and family.",
-    },
-    {
       id: "futsal-night-league",
       title: "Futsal Night League",
-      sport: "Football",
+      sport: "Futsal",
       date: "Every Friday · February 2026",
       isoDate: "2026-02-06",
       venue: "ASB Sports Centre",
@@ -95,34 +83,63 @@ export const site = {
         "All ages, all levels. Round-robin pools in the morning, knockout brackets in the afternoon.",
     },
     {
+      id: "nowruz-football-cup",
+      title: "Nowruz Football Cup",
+      sport: "Football",
+      date: "Sat 21 March 2026",
+      isoDate: "2026-03-21",
+      venue: "English Park",
+      city: "Christchurch",
+      status: "open",
+      blurb:
+        "Our flagship 11-a-side tournament — community clubs battle for the cup with food, music and family.",
+    },
+    {
+      id: "spring-netball-series",
+      title: "Spring Netball Series",
+      sport: "Netball",
+      date: "Sundays · October 2026",
+      isoDate: "2026-10-04",
+      venue: "Pulman Arena",
+      city: "Auckland",
+      status: "open",
+      blurb:
+        "A friendly weekend series welcoming new and returning players of all levels to the court.",
+    },
+    {
       id: "eid-festival-gala",
       title: "Eid Festival Sports Gala",
       sport: "Multi-sport",
-      date: "Sat 21 March 2026",
-      isoDate: "2026-03-21",
+      date: "Sat 18 April 2026",
+      isoDate: "2026-04-18",
       venue: "Memorial Park",
       city: "Hamilton",
       status: "closed",
       blurb:
-        "A celebration day of cricket, tug-of-war and kids' races to mark Eid — registrations now closed.",
+        "A celebration day of futsal, volleyball and kids' races to mark Eid — registrations now closed.",
     },
   ] satisfies SportEvent[],
 
   teams: [
     {
-      name: "Kabul Kings",
-      sport: "Cricket",
-      blurb: "Christchurch's founding side — three-time Summer Cup finalists.",
-    },
-    {
       name: "Herat United",
       sport: "Football",
-      blurb: "Wellington futsal regulars with a fierce youth academy.",
+      blurb: "Christchurch's founding side — three-time cup finalists.",
+    },
+    {
+      name: "Kabul Futsal Club",
+      sport: "Futsal",
+      blurb: "Wellington night-league regulars with a fierce youth academy.",
     },
     {
       name: "Mazar Smashers",
       sport: "Volleyball",
       blurb: "Auckland's powerhouse on the volleyball court.",
+    },
+    {
+      name: "Pamir Netball",
+      sport: "Netball",
+      blurb: "Auckland's fast-rising netball crew, growing every season.",
     },
   ] satisfies Team[],
 
@@ -153,10 +170,10 @@ export const site = {
     { name: "Silk Road Travel", tier: "Community" },
     { name: "Kiwi Auto Care", tier: "Community" },
     { name: "Pamir Restaurant", tier: "Community" },
-    { name: "Southern Cricket Trust", tier: "Community" },
+    { name: "Southern Sports Trust", tier: "Community" },
   ] satisfies Sponsor[],
 
-  registerSports: ["Cricket", "Football (Futsal)", "Volleyball", "Just volunteering"],
+  registerSports: ["Futsal", "Football", "Volleyball", "Netball", "Just volunteering"],
   registerRoles: ["Play", "Volunteer", "Coach / mentor", "Sponsor"],
 };
 
