@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { site, type SportEvent } from "@/lib/site";
+import { hasTournament } from "@/lib/tournament";
 
 const statusLabel: Record<SportEvent["status"], string> = {
   open: "Registrations open",
@@ -65,18 +67,29 @@ function EventCard({ event }: { event: SportEvent }) {
 
         <p className="mt-4 flex-1 leading-relaxed text-stone">{event.blurb}</p>
 
-        <a
-          href="#register"
-          aria-disabled={isClosed}
-          className={`mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold transition-colors ${
-            isClosed
-              ? "pointer-events-none text-stone/60"
-              : "text-crimson hover:text-crimson-bright"
-          }`}
-        >
-          {isClosed ? "Registrations closed" : "Register for this event"}
-          {!isClosed && <span aria-hidden="true">→</span>}
-        </a>
+        <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2">
+          <a
+            href="#register"
+            aria-disabled={isClosed}
+            className={`inline-flex w-fit items-center gap-1.5 text-sm font-semibold transition-colors ${
+              isClosed
+                ? "pointer-events-none text-stone/60"
+                : "text-crimson hover:text-crimson-bright"
+            }`}
+          >
+            {isClosed ? "Registrations closed" : "Register for this event"}
+            {!isClosed && <span aria-hidden="true">→</span>}
+          </a>
+
+          {hasTournament(event.id) && (
+            <Link
+              href={`/events/${event.id}`}
+              className="inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-pine transition-colors hover:text-pine-bright"
+            >
+              View tournament <span aria-hidden="true">→</span>
+            </Link>
+          )}
+        </div>
       </div>
     </article>
   );

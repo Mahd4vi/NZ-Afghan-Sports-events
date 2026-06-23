@@ -1,8 +1,8 @@
 # NZ Afghan Sports Events
 
 Marketing & community website for **NZ Afghan Sports Events** — a volunteer-led
-non-profit running cricket, futsal and volleyball events for the Afghan-Kiwi
-community across Aotearoa.
+non-profit running futsal, football, volleyball and netball events for the
+Afghan-Kiwi community across Aotearoa.
 
 Built with **Next.js 16** (App Router), **React 19**, **TypeScript** and
 **Tailwind CSS v4**.

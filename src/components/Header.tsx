@@ -47,6 +47,12 @@ export function Header() {
             </a>
           ))}
           <a
+            href="/login"
+            className="rounded-full border border-ink/20 px-5 py-2 text-sm font-semibold text-ink transition-colors hover:border-crimson hover:text-crimson"
+          >
+            Login
+          </a>
+          <a
             href="#register"
             className="rounded-full bg-crimson px-5 py-2 text-sm font-semibold text-cloud shadow-sm transition-all hover:bg-crimson-bright hover:shadow-md"
           >
@@ -99,9 +105,16 @@ export function Header() {
               </a>
             ))}
             <a
+              href="/login"
+              onClick={() => setOpen(false)}
+              className="mt-4 rounded-full border border-ink/20 px-5 py-3 text-center text-base font-semibold text-ink"
+            >
+              Login
+            </a>
+            <a
               href="#register"
               onClick={() => setOpen(false)}
-              className="mt-4 rounded-full bg-crimson px-5 py-3 text-center text-base font-semibold text-cloud"
+              className="mt-3 rounded-full bg-crimson px-5 py-3 text-center text-base font-semibold text-cloud"
             >
               Register to play
             </a>
