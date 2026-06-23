@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* ============================================================
+   NZ Afghan Sports Events — design system
+   Direction: bold sporty energy + Afghan cultural accents
+   Palette derived from the Afghan flag (black / red / green)
+   lifted with a gold accent and warm off-white surfaces.
+   ============================================================ */
+
+@theme {
+  /* Neutrals / surfaces */
+  --color-night: #0c0d10;        /* near-black hero / footer ground */
+  --color-coal: #15171c;         /* dark section panels */
+  --color-ink: #14151a;          /* primary text on light */
+  --color-stone: #5a5f68;        /* muted body text */
+  --color-mist: #efeae1;         /* card surface on light */
+  --color-sand: #f7f4ee;         /* warm off-white background */
+  --color-cloud: #ffffff;
+
+  /* Brand — Afghan flag, sportified */
+  --color-crimson: #c8102e;      /* primary red */
+  --color-crimson-bright: #e4203a;
+  --color-crimson-deep: #97091f;
+  --color-pine: #0b6b3a;         /* Afghan green */
+  --color-pine-bright: #11924f;
+  --color-gold: #d4a537;         /* accent / highlight */
+  --color-gold-soft: #e6c163;
+
+  --font-display: var(--font-oswald);
+  --font-sans: var(--font-inter);
+
+  --radius-xl2: 1.5rem;
+
+  --shadow-lift: 0 22px 60px -28px rgba(12, 13, 16, 0.55);
+}
+
+:root {
+  --background: var(--color-sand);
+  --foreground: var(--color-ink);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Display headings — bold condensed Oswald, uppercase by intent */
+h1, h2, h3, .display {
+  font-family: var(--font-display), "Arial Narrow", sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 0.98;
+}
+
+/* Eyebrow / kicker label */
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-family: var(--font-sans), system-ui, sans-serif;
+}
+
+/* Thin gold rule used under eyebrows */
+.gold-rule::after {
+  content: "";
+  display: block;
+  width: 2.5rem;
+  height: 3px;
+  margin-top: 0.6rem;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+/* Afghan-inspired geometric tile band (girih-style 8-point star grid).
+   Rendered as a tileable background so it can sit behind dark sections. */
+.tile-band {
+  background-image: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'>\
+<g fill='none' stroke='%23d4a537' stroke-width='1.1' opacity='0.5'>\
+<path d='M32 4 L40 24 L60 32 L40 40 L32 60 L24 40 L4 32 L24 24 Z'/>\
+<rect x='12' y='12' width='40' height='40' transform='rotate(45 32 32)'/>\
+</g></svg>");
+  background-size: 64px 64px;
+}
+
+/* Status pill colours */
+.pill-open { color: var(--color-pine-bright); }
+.pill-filling { color: var(--color-gold); }
+.pill-closed { color: var(--color-stone); }
+
+/* Scroll-reveal helper (driven by IntersectionObserver in Reveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
