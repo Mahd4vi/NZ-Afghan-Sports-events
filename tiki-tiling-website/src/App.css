@@ -1,0 +1,330 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4; /* Light grey background */
+}
+
+.container { /* To wrap main content if needed */
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* Hero Section Basic Styling */
+.hero {
+  background: #50b3a2; /* A teal/turquoise color, fits "Tiki" somewhat */
+  color: white;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Main Content Area in App.js */
+main { /* This is the <main> tag wrapping <Routes> in App.js */
+  flex-grow: 1; /* Allows the main content to expand and push footer down */
+  padding: 20px; /* Add some padding around the content of all pages */
+  /* background-color: #fff; /* Remove this, let pages decide or default to body */
+  /* margin: 20px auto; /* Remove this, App.js structure handles centering */
+  /* width: 80%; /* Remove this */
+  /* box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Remove this */
+}
+
+/* Styles for the content *within* each page component if needed */
+/* For example, if page components have a root div with class "page-content" */
+.page-content { /* Add this class to the root div of each page component if you want shared page styling */
+    background-color: #fff;
+    padding: 20px;
+    margin: 0 auto; /* Center content if it's narrower than main */
+    max-width: 1200px; /* Example max width */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+main h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* Footer Styling */
+footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  /* position: fixed; */ /*  Can be problematic, let's avoid for now */
+  /* bottom: 0; */
+  /* width: 100%; */
+}
+
+/* Gallery Page Specific */
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center items */
+  padding-top: 20px;
+}
+
+.gallery-item {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  width: 300px; /* Fixed width for items */
+}
+
+.gallery-item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* General Typography and Element Refinements */
+
+/* Ensure links within main content are clearly distinguishable and wrap well */
+.page-content a {
+  color: #50b3a2; /* Tiki accent color for links */
+  text-decoration: underline;
+  word-break: break-word; /* Help long links or text to wrap */
+}
+
+.page-content a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+/* Styling for lists within page content for better readability */
+.page-content ul,
+.page-content ol {
+  margin-left: 20px; /* Standard indentation for lists */
+  padding-left: 10px; /* Additional padding for list items */
+  margin-bottom: 1rem; /* Space below lists */
+}
+
+.page-content li {
+  margin-bottom: 0.5rem; /* Space between list items */
+}
+
+/* Navbar Styling - Responsive */
+.navbar {
+  background: #333;
+  color: #fff;
+  padding: 0.75rem 0; /* Adjusted padding */
+  position: sticky; /* Make navbar sticky */
+  top: 0;
+  z-index: 1000; /* Ensure it's above other content */
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%; /* Max width for nav content */
+  max-width: 1200px; /* Consistent with .page-content max-width */
+  margin: 0 auto; /* Center nav content */
+  padding: 0 1rem; /* Padding inside the container */
+}
+
+.nav-logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex; /* For desktop view */
+  align-items: center;
+}
+
+.nav-menu li {
+  margin-left: 20px; /* Spacing between items on desktop */
+}
+
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem; /* Add some padding for easier clicking */
+  display: block;
+}
+
+.nav-menu a:hover {
+  color: #50b3a2; /* Tiki accent color on hover */
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default, shown on mobile */
+  background: none;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Mobile Styles - Target screens smaller than, say, 768px */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Height of the navbar, adjust as needed */
+    left: 0;
+    background-color: #333; /* Background for the dropdown */
+    padding: 1rem 0; /* Padding for the dropdown */
+    z-index: 999; /* Below navbar but above content */
+  }
+
+  .nav-menu.active {
+    display: flex; /* Show when active */
+  }
+
+  .nav-menu li {
+    margin: 0; /* Remove desktop margin */
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-menu li a {
+    padding: 1rem; /* Larger clickable area for mobile */
+    border-bottom: 1px solid #444; /* Separator for items */
+  }
+
+  .nav-menu li:last-child a {
+    border-bottom: none;
+  }
+
+  .menu-toggle {
+    display: block; /* Show the toggle button */
+  }
+
+  /* Hero Section Adjustments */
+  .hero {
+    padding: 2.5rem 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Reduce h1 font size */
+  }
+
+  .hero p {
+    font-size: 0.9rem; /* Adjust paragraph font size if needed */
+  }
+
+  /* Page Content Wrapper Adjustments */
+  .page-content {
+    width: 100%; /* Occupy full width */
+    padding: 15px; /* Adjust padding for mobile if needed */
+    margin: 0; /* Remove horizontal auto margin for full width */
+    box-shadow: none; /* Optional: remove shadow on mobile for a flatter look */
+  }
+
+  /* Gallery Grid & Item Adjustments */
+  .gallery-grid {
+    gap: 15px; /* Slightly reduce gap */
+  }
+
+  .gallery-item {
+    flex-basis: calc(50% - 8px); /* Adjust 8px based on half the gap */
+    padding: 8px; /* Adjust padding */
+  }
+
+  /* Page Content Font Size Adjustments for 768px */
+  .page-content {
+    /* Existing styles: width: 100%; padding: 15px; margin: 0; box-shadow: none; */
+    font-size: 0.95rem; /* Slightly adjust base font for page content on tablets/mobile */
+  }
+
+  .page-content h2 {
+    font-size: 1.8rem; /* Ensure consistency with previous step or adjust slightly */
+  }
+}
+
+/* For very small screens (e.g., less than 480px) */
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0.5rem;
+  }
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .page-content {
+    padding: 10px;
+    font-size: 0.9rem; /* Further adjust for very small screens */
+  }
+
+  .gallery-item {
+    /* Single column on very small screens */
+    width: 100%;
+    flex-basis: 100%; /* Each item takes full width */
+  }
+
+  /* General Typography Adjustments for very small screens */
+  body {
+    font-size: 15px; /* Slightly adjust base font size if needed */
+  }
+
+  /* Adjust main headings within page content if necessary */
+  .page-content h2 {
+    font-size: 1.5rem; /* Ensure consistency or adjust */
+  }
+
+  .page-content ul,
+  .page-content ol {
+    margin-left: 15px; /* Reduce indentation slightly for very small screens */
+    padding-left: 5px;
+  }
+}
+
+/* Placeholder for Contact Form Styling (Future) */
+/*
+.contact-form label { ... }
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  background-color: #50b3a2;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #3e8e7e;
+}
+*/
